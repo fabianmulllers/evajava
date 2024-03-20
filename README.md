@@ -19,41 +19,6 @@ Asegúrate de tener instalados los siguientes elementos en tu entorno de desarro
 
 ## Instrucciones de Uso
 
-```plaintext
-Paso 1: Clonar el Repositorio
-
-Clona el repositorio de GitHub en tu máquina local utilizando el siguiente comando:
-
-git clone https://github.com/fabianmulllers/evajava.git
-
-
-Paso 2: Importar el Proyecto
-
-Abre tu IDE (IntelliJ IDEA, Eclipse, etc.) y importa el proyecto como un proyecto Maven existente.
-
-
-Paso 3: Configurar la Base de Datos 
-
-Se utilizo como base de datos H2
-
-Paso 4: Ejecutar el Proyecto
-
-Ejecuta el proyecto desde tu IDE o utilizando Maven desde la línea de comandos. 
-
-Desde la línea de comandos, navega hasta el directorio raíz del proyecto y ejecuta el siguiente comando:
-
-mvn spring-boot:run
-
-Esto iniciará la aplicación y estará disponible en la URL predeterminada (http://localhost:9191/evaluacion).
-
-Paso 5: Probar la Aplicación
-
-Una vez que la aplicación esté en funcionamiento, puedes probarla accediendo a los endpoints proporcionados. Puedes utilizar herramientas como Postman o simplemente un navegador web para interactuar con la aplicación.
-
-La aplicacion tiene instalada swagger podras ingresar desde la siguiente URL http://localhost:9191/evaluacion/swagger-ui/index.html
-
-Este README.md tiene todos los pasos dentro de un bloque de código para que puedas copiarlos fácilmente. ¡Espero que te sea útil!
-
 
 ## Endpoint disponibles
 
@@ -111,4 +76,42 @@ Datos de entrada actualizar usuario (El id es el que se obtiene al guardar el us
     }
   ]
 }
+
+
+
+```plaintext
+Paso 1: Clonar el Repositorio
+
+Clona el repositorio de GitHub en tu máquina local utilizando el siguiente comando:
+
+git clone https://github.com/fabianmulllers/evajava.git
+
+
+Paso 2: Importar el Proyecto
+
+Abre tu IDE (IntelliJ IDEA, Eclipse, etc.) y importa el proyecto como un proyecto Maven existente.
+
+
+Paso 3: Configurar la Base de Datos 
+
+Se utilizo como base de datos H2
+
+Paso 4: Ejecutar el Proyecto
+
+Ejecuta el proyecto desde tu IDE o utilizando Maven desde la línea de comandos. 
+
+Desde la línea de comandos, navega hasta el directorio raíz del proyecto y ejecuta el siguiente comando:
+
+mvn spring-boot:run
+
+Esto iniciará la aplicación y estará disponible en la URL predeterminada (http://localhost:9191/evaluacion).
+
+Paso 5: Probar la Aplicación
+
+Una vez que la aplicación esté en funcionamiento, puedes probarla accediendo a los endpoints proporcionados. Puedes utilizar herramientas como Postman o simplemente un navegador web para interactuar con la aplicación.
+
+La aplicacion tiene instalada swagger podras ingresar desde la siguiente URL http://localhost:9191/evaluacion/swagger-ui/index.html
+
+Este README.md tiene todos los pasos dentro de un bloque de código para que puedas copiarlos fácilmente. ¡Espero que te sea útil!
+
 
