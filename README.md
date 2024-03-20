@@ -57,7 +57,7 @@ Datos de entrada para agregar usuario
             }
         ]
 }
-
+```
 
 Datos de entrada actualizar usuario (El id es el que se obtiene al guardar el usuario)
 
@@ -76,7 +76,7 @@ Datos de entrada actualizar usuario (El id es el que se obtiene al guardar el us
     }
   ]
 }
-
+```
 
 
 ```plaintext
