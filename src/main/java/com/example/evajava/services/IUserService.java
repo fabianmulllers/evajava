@@ -15,7 +15,7 @@ public interface IUserService {
 	
 	public UserCustomResponse createUser(UserCustomRequest user);
 	
-	public UserCustomResponse updateUser(UserCustomUpdateRequest user);
+	public UserCustomResponse updateUser(UserCustomUpdateRequest user, UserEntity userEntity);
 	
 	public List<UserCustomResponseAll> getAllUser();
 	

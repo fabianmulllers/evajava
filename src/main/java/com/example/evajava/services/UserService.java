@@ -67,7 +67,7 @@ public class UserService implements IUserService{
 	}
 	
 	@Override
-	public UserCustomResponse updateUser(UserCustomUpdateRequest user) {
+	public UserCustomResponse updateUser(UserCustomUpdateRequest user, UserEntity userE) {
 		
 	    // Guardamos el usuario
 	    UserEntity userEntity = new UserEntity();     
@@ -75,6 +75,7 @@ public class UserService implements IUserService{
 	    userEntity.setNombre(user.getNombre());
 	    userEntity.setCorreo(user.getCorreo());
 	    userEntity.setPassword(user.getPassword());
+	    userEntity.setDateCreated(userE.getDateCreated());
 
 	    // Guardamos los telefonos
 	    List<PhoneCustomUpdateRequest> listPhoneCR = user.getTelefonos();

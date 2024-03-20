@@ -2,6 +2,8 @@ package com.example.evajava.exception;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -13,6 +15,8 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+	
+	private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -32,7 +36,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex) {
         Map<String, Object> response = new HashMap<>();
         response.put("mensaje", "Error en el tipo de argumento de la solicitud.");
-        response.put("error", ex.getMessage());
+        logger.error("error: " + ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
@@ -40,7 +44,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleHttpMessageNotReadable(HttpMessageNotReadableException ex) {
         Map<String, Object> response = new HashMap<>();
         response.put("mensaje", "Error en el formato del cuerpo de la solicitud.");
-        response.put("error", ex.getMessage());
+        logger.error("error: " + ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 }

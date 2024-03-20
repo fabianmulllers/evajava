@@ -21,6 +21,7 @@ public class UserCustomRequest {
     @Pattern(regexp = "^((mailto:)?[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})?$", message = "El correo debe tener un formato válido")
 	private String correo;
 	
+	@NotBlank(message = "El password no puede estar vacío")
 	private String password;
 	
 	private List<PhoneCustomRequest> telefonos;

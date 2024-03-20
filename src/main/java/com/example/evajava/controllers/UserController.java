@@ -94,8 +94,8 @@ public class UserController implements IUserController{
 	public ResponseEntity<?> updateUser(@Valid @RequestBody UserCustomUpdateRequest user) {
 		Map<String, Object> response = new HashMap<>();
 		try {
-			
-			if(userService.getUser(user.getId()) == null) {
+			UserEntity userEntity = userService.getUser(user.getId());
+			if( userEntity == null) {
 				response.put("mensaje", "Usuario no encontrado");
 				return new ResponseEntity<Map<String,Object>>(response,HttpStatus.BAD_REQUEST);
 			}
@@ -110,7 +110,7 @@ public class UserController implements IUserController{
 				return new ResponseEntity<Map<String,Object>>(response,HttpStatus.BAD_REQUEST);
 			}
 			
-			UserCustomResponse respuesta = userService.updateUser(user);
+			UserCustomResponse respuesta = userService.updateUser(user, userEntity);
 			return new ResponseEntity<>(respuesta, HttpStatus.OK);
 		}catch (Exception e) {
 			logger.error(e.getMessage());
@@ -121,7 +121,7 @@ public class UserController implements IUserController{
 
 	@Override
     @PatchMapping("/desactivar/{id}")
-	public ResponseEntity<?> desactivar(UUID id) {
+	public ResponseEntity<?> desactivar(@PathVariable("id") UUID id) {
 		Map<String, Object> response = new HashMap<>();
 		try {
 			UserEntity usuario = userService.getUser(id);
@@ -141,7 +141,7 @@ public class UserController implements IUserController{
 	}
 
 	@Override
-	@GetMapping("/all")
+	@GetMapping("/")
 	public ResponseEntity<?> getAllUser(){
 		try {
 			List<UserCustomResponseAll> listUser = userService.getAllUser();
