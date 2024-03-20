@@ -17,9 +17,6 @@ Asegúrate de tener instalados los siguientes elementos en tu entorno de desarro
 - JDK 17 o superior
 - Maven 3.6.x o superior
 
-## Instrucciones de Uso
-
-
 ## Endpoint disponibles
 
 Actualizar un usuario
@@ -78,6 +75,7 @@ Datos de entrada actualizar usuario (El id es el que se obtiene al guardar el us
 }
 ```
 
+## Instrucciones de Uso
 
 ```plaintext
 Paso 1: Clonar el Repositorio
@@ -113,5 +111,5 @@ Una vez que la aplicación esté en funcionamiento, puedes probarla accediendo a
 La aplicacion tiene instalada swagger podras ingresar desde la siguiente URL http://localhost:9191/evaluacion/swagger-ui/index.html
 
 Este README.md tiene todos los pasos dentro de un bloque de código para que puedas copiarlos fácilmente. ¡Espero que te sea útil!
-
+```
 
